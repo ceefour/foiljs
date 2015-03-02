@@ -1,0 +1,29 @@
+<ion-view view-title="Grandparent">
+  <ion-content>
+      <h1>First-Order Inductive Learning: Grandparent Case</h1>
+      <div><strong>Background knowledge (B):</strong>
+          <ol>
+              <li ng-repeat="fact in bkgFacts">
+                  <code><span style="color: navy">{{fact.predicate}}</span><strong>(</strong>{{fact.params.join(', ')}}<strong>)</strong></code>
+              </li>
+          </ol>
+      </div>
+      <div><strong>Positive examples (E+):</strong>
+          <ol>
+              <li ng-repeat="sample in posSamples">
+                  <code><span style="color: navy">{{wantedPredicate}}</span><strong>(</strong>{{sample.params.join(', ')}}<strong>)</strong></code>
+              </li>
+          </ol>
+      </div>
+      <div><strong>Negative examples (E-):</strong>
+          <ol>
+              <li ng-repeat="sample in negSamples">
+                  <code><span style="color: navy">{{wantedPredicate}}</span><strong>(</strong>{{sample.params.join(', ')}}<strong>)</strong></code>
+              </li>
+          </ol>
+      </div>
+      <hr/>
+      
+      <button class="button button-calm" ng-click="foil()"><i class="ion ion-wrench"></i> FOIL!</button>
+  </ion-content>
+</ion-view>
