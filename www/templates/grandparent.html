@@ -25,5 +25,15 @@
       <hr/>
       
       <button class="button button-calm" ng-click="foil()"><i class="ion ion-wrench"></i> FOIL!</button>
+      
+      <hr/>
+      
+      <ion-list>
+          <ion-item class="item-text-wrap" ng-repeat="rule in triedRules">
+              <code>{{rule.displayName}}</code>
+              <span ng-if="!rule.found" class="badge badge-assertive">{{rule.matchedPosSamples.length}}</span>
+              <span ng-if="rule.found" class="badge badge-balanced">{{rule.matchedPosSamples.length}}</span>
+          </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>
